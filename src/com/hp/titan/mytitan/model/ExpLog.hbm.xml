@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.ExpLog" table="EXP_LOG">
+        <id name="expLogId" type="string">
+           <column name="EXP_LOG_ID" length="50" />
+           <generator class="uuid" />
+        </id>
+        <property name="expValue" type="integer">
+            <column name="EXP_VALUE" length="11" />
+        </property>
+        <property name="expTotal" type="integer">
+            <column name="EXP_TOTAL" length="11" />
+        </property>
+        <property name="expType" type="string">
+            <column name="EXP_TYPE" length="50" />
+        </property>
+        <property name="detail" type="string">
+            <column name="Detail" length="200" />
+        </property>
+        <property name="userId" type="integer">
+            <column name="USER_ID" length="11" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+         <property name="isValid" type="integer">
+            <column name="IS_VALID" length="11"/>
+        </property>
+    </class>
+</hibernate-mapping>

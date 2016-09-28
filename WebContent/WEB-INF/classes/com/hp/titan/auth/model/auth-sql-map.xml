@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+			<mapping resource="com/hp/titan/auth/model/User.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/UserGroup.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/UserRole.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/Role.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/Auth.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/RoleAuth.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/Group.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/Menu.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/ViewUserInfo.hbm.xml" />
+			<mapping resource="com/hp/titan/auth/model/UserProject.hbm.xml" />
+ 
+	</session-factory>
+</hibernate-configuration>
+

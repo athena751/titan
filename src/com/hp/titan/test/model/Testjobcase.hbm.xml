@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.test.model.TestJobCase" table="TEST_JOB_CASE" >
+    	<composite-id name="id" class="com.hp.titan.test.model.TestJobCaseId">
+            <key-property name="testjobId" type="string">
+                <column name="JOB_ID" length="50" />
+            </key-property>
+            <key-property name="testcaseId" type="string">
+                <column name="CASE_ID" length="50" />
+            </key-property>
+        </composite-id>
+        <property name="sort" type="string">
+            <column name="SORT" length="3" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.Menu" table="titan_menu" >
+        <id name="menuId" type="int">
+            <column name="MENU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="menuLevel" type="int">
+            <column name="MENU_LEVEL"  />
+        </property>
+        <property name="menuName" type="string">
+            <column name="MENU_NAME" length="200" />
+        </property>
+ 		<property name="menuCode" type="string">
+            <column name="MENU_CODE" length="200" />
+        </property>
+        <property name="supperMenuId" type="int">
+            <column name="SUPPER_MENU_ID"  />
+        </property>
+         <property name="actionUrl" type="string">
+            <column name="ACTION_URL" length="200" />
+        </property>   
+		<property name="imgUrl" type="string">
+            <column name="IMG_URL" length="200" />
+        </property>       
+        <property name="isValid" type="int">
+            <column name="IS_VALID" />
+        </property>
+    </class>
+</hibernate-mapping>

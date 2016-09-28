@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="titan_mytitan" extends="application-struts-default" namespace="/mytitan">
+		<!--My project-->
+		<action name="myprojectList" class="com.hp.titan.mytitan.action.MytitanAction" method="doSearchMyProjects">
+			<result name="success" type="freemarker">/pages/mytitan/myProjectList.ftl</result>
+		</action>
+		<action name="goDefaultProjectChange" class="com.hp.titan.mytitan.action.MytitanAction" method="goDefaultProjectChange">
+			<result name="success" type="redirect">myprojectList.do</result>
+		</action>
+
+		<!--My defect-->
+		<action name="mydefectList" class="com.hp.titan.mytitan.action.MytitanAction" method="mydefectList">
+			<result name="success" type="freemarker">/pages/mytitan/mydefectList.ftl</result>
+		</action>
+		<action name="refreshDefect" class="com.hp.titan.mytitan.action.MytitanAction" method="refreshDefect">
+		</action>
+		<action name="getDefectTask" class="com.hp.titan.mytitan.action.MytitanAction" method="getUsTask">
+		</action>
+		
+		<!-- My strong field -->
+		<action name="myStrongField" class="com.hp.titan.mytitan.action.MytitanAction" method="myStrongField">
+			<result name="success" type="freemarker">/pages/mytitan/myStrongFieldList.ftl</result>
+		</action>
+		
+		<!--My workload-->
+		<action name="myworkloadList" class="com.hp.titan.mytitan.action.MytitanAction" method="myworkloadList">
+			<result name="success" type="freemarker">/pages/mytitan/myWorkloadList.ftl</result>
+		</action>
+		<action name="myworkloadEdit" class="com.hp.titan.mytitan.action.MytitanAction" method="myworkloadEdit">
+			<result name="success" type="freemarker">/pages/mytitan/myworkloadEdit.ftl</result>
+		</action>
+		<action name="getTaskInfo" class="com.hp.titan.mytitan.action.MytitanAction" method="getTaskInfo">
+		</action>
+		<action name="generateReport" class="com.hp.titan.mytitan.action.MytitanAction" method="generateReport">
+		</action>
+		<action name="getReportFromDB" class="com.hp.titan.mytitan.action.MytitanAction" method="getReportFromDB">
+		</action>
+		<action name="doSendReport" class="com.hp.titan.mytitan.action.MytitanAction" method="doSendReport">
+		</action>
+		<action name="doSaveReport" class="com.hp.titan.mytitan.action.MytitanAction" method="doSaveReport">
+			<result name="success" type="redirect">myworkloadList.do</result>
+		</action>
+		<action name="doSaveAndSendReport" class="com.hp.titan.mytitan.action.MytitanAction" method="doSaveAndSendReport">
+			<result name="success" type="redirect">myworkloadList.do</result>
+		</action>
+		
+		<!--My us-->
+		<action name="myusList" class="com.hp.titan.mytitan.action.MytitanAction" method="myusList">
+			<result name="success" type="freemarker">/pages/mytitan/myUserStoryList.ftl</result>
+		</action>
+		<action name="refreshUs" class="com.hp.titan.mytitan.action.MytitanAction" method="refreshUs">
+		</action>
+		<action name="getUsTask" class="com.hp.titan.mytitan.action.MytitanAction" method="getUsTask">
+		</action>
+		
+		<!--My code-->
+		<action name="myCommitList" class="com.hp.titan.mytitan.action.MytitanAction" method="myCommitList">
+			<result name="success" type="freemarker">/pages/mytitan/myCommitList.ftl</result>
+		</action>
+		<action name="goReportaryView" class="com.hp.titan.mytitan.action.MytitanAction" method="goReportaryView">
+			<result name="success" type="freemarker">/pages/mytitan/myCommitList.ftl</result>
+		</action>
+		<action name="showChangesList" class="com.hp.titan.mytitan.action.MytitanAction" method="myCommitChangeList">
+		</action>
+		
+		<!--My point-->
+		<action name="myPointList" class="com.hp.titan.mytitan.action.MytitanAction" method="myPointList">
+			<result name="success" type="freemarker">/pages/mytitan/pointList.ftl</result>
+		</action>
+		<action name="syncPoint" class="com.hp.titan.mytitan.action.MytitanAction" method="syncPoint">
+		</action>
+		<action name="doAwardPoint" class="com.hp.titan.mytitan.action.MytitanAction" method="doAwardPoint">
+		    <result name="success" type="freemarker">/pages/mytitan/pointList.ftl</result>
+		</action>
+		
+		<!--My shopping mall-->
+		<action name="goUsePoint" class="com.hp.titan.mytitan.action.MytitanAction" method="goUsePoint">
+		    <result name="success" type="freemarker">/pages/mytitan/pointShoppingMall.ftl</result>
+		</action>
+		<action name="goNewUsePoint" class="com.hp.titan.mytitan.action.MytitanAction" method="goNewUsePoint">
+		    <result name="success" type="freemarker">/pages/mytitan/pointNewShoppingMall.ftl</result>
+		</action>
+		<action name="doSaveConsume" class="com.hp.titan.mytitan.action.MytitanAction" method="doSaveConsume">
+		    <result name="success" type="redirect">goMyConsumeList.do</result>
+		</action>
+		<action name="doSaveNewConsume" class="com.hp.titan.mytitan.action.MytitanAction" method="doSaveNewConsume">
+		    <result name="success" type="redirect">doSaveNewConsume.do</result>
+		</action>
+		<action name="hasEnoughPoints" class="com.hp.titan.mytitan.action.MytitanAction" method="hasEnoughPoints">
+		</action>
+		<action name="goMyConsumeList" class="com.hp.titan.mytitan.action.MytitanAction" method="goMyConsumeList">
+			<result name="success" type="freemarker">/pages/mytitan/myConsumeList.ftl</result>
+		</action>
+		<action name="cancellConsum" class="com.hp.titan.mytitan.action.MytitanAction" method="cancellConsum">
+			<result name="success" type="redirect">goMyConsumeList.do</result>
+		</action>
+		<action name="comsumptionCount" class="com.hp.titan.mytitan.action.MytitanAction" method="comsumptionCount">
+			<result name="success" type="freemarker">/pages/mytitan/consumeReport.ftl</result>
+		</action>
+		<action name="getChartXml" class="com.hp.titan.mytitan.action.MytitanAction" method="getChartXml">
+		</action>
+		<action name="calculatePoint" class="com.hp.titan.mytitan.action.MytitanAction" method="calculatePoint">
+		</action>
+		<action name="goAllConsumeList" class="com.hp.titan.mytitan.action.MytitanAction" method="goAllConsumeList">
+			<result name="success" type="freemarker">/pages/mytitan/allConsumeList.ftl</result>
+		</action>
+		<action name="completeConsume" class="com.hp.titan.mytitan.action.MytitanAction" method="completeConsume">
+			<result name="success" type="redirect">goAllConsumeList.do</result>
+		</action>
+		<action name="goGamblingList" class="com.hp.titan.mytitan.action.MytitanAction" method="goGamblingList">
+			<result name="success" type="freemarker">/pages/mytitan/goGamblingList.ftl</result>
+		</action>
+		<action name="selectNumber" class="com.hp.titan.mytitan.action.MytitanAction" method="selectNumber">
+			<result name="success" type="freemarker">/pages/mytitan/selectNumber.ftl</result>
+		</action>
+		<action name="doSubmitSelect" class="com.hp.titan.mytitan.action.MytitanAction" method="doSubmitSelect">
+		</action>
+		<action name="ifnumSelected" class="com.hp.titan.mytitan.action.MytitanAction" method="ifnumSelected">
+		</action>
+		<action name="gambleConsume" class="com.hp.titan.mytitan.action.MytitanAction" method="gambleConsume">
+			<result name="success" type="freemarker">/pages/mytitan/gambleConsume.ftl</result>
+		</action>
+		<action name="firing" class="com.hp.titan.mytitan.action.MytitanAction" method="firing">
+			<result name="success" type="freemarker">/pages/mytitan/firing.ftl</result>
+		</action>
+		<action name="goAllWinnerList" class="com.hp.titan.mytitan.action.MytitanAction" method="goAllWinnerList">
+			<result name="success" type="freemarker">/pages/mytitan/goAllWinnerList.ftl</result>
+		</action>
+		<action name="completeWinner" class="com.hp.titan.mytitan.action.MytitanAction" method="completeWinner">
+			<result name="success" type="redirect">goAllWinnerList.do</result>
+		</action>
+		
+		<!-- My InBox -->
+		<action name="inboxList" class="com.hp.titan.mytitan.action.MytitanAction" method="inboxList">
+			<result name="success" type="freemarker">/pages/mytitan/inboxList.ftl</result>
+		</action>
+		<action name="openTreasureBox" class="com.hp.titan.mytitan.action.MytitanAction" method="openTreasureBox">
+			<result name="success" type="freemarker">/pages/mytitan/treasure.ftl</result>
+		</action>
+		<action name="addPoint" class="com.hp.titan.mytitan.action.MytitanAction" method="addPoint">
+		</action>
+	</package>
+
+</struts>

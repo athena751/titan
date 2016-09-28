@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/hp/titan/mytitan/model/WeeklyReport.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/WeeklyReportTask.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/UserstoryInfo.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/Reportary.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/CommitReport.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/CommitPath.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/ProjectRallyQuix.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/PointHist.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/Point.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/ExpAccount.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/ExpLog.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/Goods.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/Consumption.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/InBox.hbm.xml" />
+		<mapping resource="com/hp/titan/mytitan/model/Winner.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

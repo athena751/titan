@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.test.model.DefectInfo" table="DEFECT_INFO">
+        <id name="objectId" type="string">
+            <column name="OBJECT_ID" length="50" />
+        </id>
+        <property name="defectName" type="string">
+            <column name="DEFECT_NAME" length="500" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="20" />
+        </property>
+        <property name="priority" type="string">
+            <column name="PRIORITY" length="20" />
+        </property>
+        <property name="submittedBy" type="string">
+            <column name="SUBMITTEDBY" length="50" />
+        </property>
+        <property name="submittEmail" type="string">
+            <column name="SUBMITTEDBYEMAIL" length="50" />
+        </property>
+        <property name="developer" type="string">
+            <column name="DEVELOPER" length="50" />
+        </property>
+        <property name="developerEmail" type="string">
+            <column name="DEVELOPEREMAIL" length="50" />
+        </property>
+        <property name="submitDate" type="timestamp">
+            <column name="SUBMIT_DATE" length="19" />
+        </property>
+        <property name="lastupdateDate" type="timestamp">
+            <column name="LAST_UPDATE_DATE" length="19" />
+        </property>
+        <property name="defectNum" type="string">
+            <column name="DEFECT_NUM" length="20" />
+        </property>
+        <property name="addUrl" type="string">
+            <column name="ADDURL" length="300" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="PROJECT_NAME" length="100" />
+        </property>
+        <property name="component" type="string">
+            <column name="COMPONENT" length="100" />
+        </property>
+        <property name="userStory" type="string">
+            <column name="USNUM" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 4, 2013 5:55:08 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.test.model.Parameter" table="PARAMETER">
+        <id name="paraId" type="string">
+            <column name="PARA_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="caseId" type="string">
+            <column name="CASE_ID" length="50" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="50" />
+        </property>
+        <property name="paraName" type="string">
+            <column name="PARA_NAME" length="200" />
+        </property>
+        <property name="paraValue" type="string">
+            <column name="PARA_VALUE" length="50" />
+        </property>
+        <property name="paraOrder" type="java.lang.Integer">
+            <column name="PARA_ORDER" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="1000" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="1000" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="CREATE_USER_ID" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="UPDATE_USER_ID" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UPDATE_DATE" length="19" />
+        </property>
+        <property name="isValid" type="java.lang.Integer">
+            <column name="IS_VALID" />
+        </property>
+    </class>
+</hibernate-mapping>

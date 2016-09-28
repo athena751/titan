@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="titan_system" extends="application-struts-default"
+		namespace="/">
+
+		<action name="login">
+			<result>pages/login.jsp</result>
+		</action>
+
+		<action name="doCheckLogin" class="com.hp.titan.login.LoginAction"
+			method="doCheckLogin">
+		</action>
+
+		<action name="doLogin" class="com.hp.titan.login.LoginAction"
+			method="doLogin">
+			<result name="success" type="redirect">indexmain.do</result>
+		</action>
+
+		<action name="indexmain" class="com.hp.titan.login.LoginAction"
+			method="goIndexMain">
+			<result name="success" type="freemarker">pages/index.ftl</result>
+			<interceptor-ref name="applicationStack" />
+		</action>
+
+		<action name="doLogout" class="com.hp.titan.login.LoginAction"
+			method="doLogout">
+			<result name="success">pages/login.jsp</result>
+		</action>
+
+		<action name="register" class="com.hp.titan.login.LoginAction"
+			method="goRegister">
+			<result name="success" type="freemarker">
+				pages/user/userRegister.ftl
+			</result>
+		</action>
+
+		<action name="doRegister" class="com.hp.titan.login.LoginAction"
+			method="doRegister">
+			<result name="success">pages/login.jsp</result>
+		</action>
+
+		<action name="home" class="com.hp.titan.login.IndexAction"
+			method="goIndex">
+			<result name="success">pages/home.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.test.model.Testcase" table="TESTCASE">
+        <id name="caseId" type="string">
+            <column name="CASE_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="caseCode" type="string">
+            <column name="CASE_CODE" length="50" />
+        </property>
+        <property name="caseName" type="string">
+            <column name="CASE_NAME" length="200" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="50" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="1000" />
+        </property>
+        <property name="ownerId" type="java.lang.Integer">
+            <column name="OWNER_ID" />
+        </property>
+        <property name="projectId" type="string">
+            <column name="PROJECT_ID" length="50" />
+        </property>
+        <property name="moduleId" type="string">
+            <column name="MODULE_ID" length="50" />
+        </property>
+        <property name="testStep" type="string">
+            <column name="TEST_STEP" length="2000" />
+        </property>
+        <property name="expectation" type="string">
+            <column name="EXPECTATION" length="1000" />
+        </property>
+        <property name="serverId" type="string">
+            <column name="SERVER_ID" length="50" />
+        </property>
+        <property name="command" type="string">
+            <column name="COMMAND" length="1000" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="1000" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="1000" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="CREATE_USER_ID" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="UPDATE_USER_ID" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UPDATE_DATE" length="19" />
+        </property>
+        <property name="isValid" type="java.lang.Integer">
+            <column name="IS_VALID" />
+        </property>
+        <property name="timeout" type="string">
+            <column name="TIME_OUT" length="50" />
+        </property>
+        
+        <many-to-one name="owner" class="com.hp.titan.auth.model.User" lazy="false" update="false" insert="false" fetch="select">
+            <column name="OWNER_ID">
+                <comment>owner id</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="project" class="com.hp.titan.project.model.Project" lazy="false" update="false" insert="false" fetch="select">
+            <column name="PROJECT_ID">
+                <comment>Project id</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

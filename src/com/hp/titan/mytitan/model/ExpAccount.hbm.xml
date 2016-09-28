@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.ExpAccount" table="EXP_ACCOUNT">
+  		<id name="expId" type="integer">
+            <column name="EXP_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="userId" type="integer">
+            <column name="USER_ID" length="11" />
+        </property>
+        <property name="expTotal" type="integer">
+            <column name="EXP_TOTAL" length="11" />
+        </property>
+        <property name="lastUpdateDate" type="timestamp">
+            <column name="LAST_UPDATE_DATE" length="19" />
+        </property>
+         <property name="isValid" type="integer">
+            <column name="IS_VALID" length="11"/>
+        </property>
+    </class>
+</hibernate-mapping>

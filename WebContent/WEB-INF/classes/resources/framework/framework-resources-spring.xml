@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:application.properties</value>
+				<value>classpath*:resources/**/*-spring.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- ================================================ -->
+	<!-- datasource                                       -->
+	<!-- ================================================ -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- ================================================ -->
+	<!-- hibernate sessionfactory                         -->
+	<!-- ================================================ -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		singleton="true">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocations">
+			<list>
+				<value>classpath*:**/*-sql-map.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernateProperties.hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernateProperties.hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">
+					${hibernateProperties.hibernate.hbm2ddl.auto}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">
+					${hibernateProperties.hibernate.jdbc.batch_size}
+				</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.HashtableCacheProvider
+				</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="rallyapiFactory" class="com.hp.titan.test.action.RestApiFactory" singleton="false">
+	</bean>
+	<bean id="snmpFactory" class="com.hp.titan.server.action.SnmpFactory">
+	</bean>
+</beans>

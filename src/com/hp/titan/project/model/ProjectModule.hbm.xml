@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 23, 2013 2:16:15 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.project.model.ProjectModule" table="PROJECT_MODULE">
+        <id name="moduleId" type="string">
+            <column name="MODULE_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="moduleName" type="string">
+            <column name="MODULE_NAME" length="200" />
+        </property>
+        <property name="projectId" type="string">
+            <column name="PROJECT_ID" length="50" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="1000" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="CREATE_USER_ID" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="UPDATE_USER_ID" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UPDATE_DATE" length="19" />
+        </property>
+        <property name="isValid" type="java.lang.Integer">
+            <column name="IS_VALID" />
+        </property>
+        <property name="str1" type="string">
+            <column name="STR1" length="100" />
+        </property>
+        <property name="str2" type="string">
+            <column name="STR2" length="100" />
+        </property>
+        <property name="str3" type="string">
+            <column name="STR3" length="100" />
+        </property>
+        <property name="str4" type="string">
+            <column name="STR4" length="100" />
+        </property>
+        <property name="str5" type="string">
+            <column name="STR5" length="100" />
+        </property>
+        <property name="str6" type="string">
+            <column name="STR6" length="100" />
+        </property>
+        <property name="str7" type="string">
+            <column name="STR7" length="100" />
+        </property>
+        <property name="integer1" type="java.lang.Integer">
+            <column name="INTEGER1" />
+        </property>
+        <property name="integer2" type="java.lang.Integer">
+            <column name="INTEGER2" />
+        </property>
+        <property name="integer3" type="java.lang.Integer">
+            <column name="INTEGER3" />
+        </property>
+    </class>
+</hibernate-mapping>

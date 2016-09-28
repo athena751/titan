@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.ProjectRallyQuix" table="PROJECT_RALLY_QUIX">
+        <id name="rallyquixId" type="string">
+            <column name="RALLY_QUIX_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="projectId" type="string">
+            <column name="PROJECT_ID" length="50" />
+        </property>
+        <property name="nameinRally" type="string">
+            <column name="NAME_IN_RALLY" length="50" />
+        </property>
+        <property name="nameinQuix" type="string">
+            <column name="NAME_IN_QUIX" length="50" />
+        </property>
+        <property name="autoRefresh" type="string">
+            <column name="AUTO_REFRESH" length="1" />
+        </property>
+         <property name="component" type="string">
+            <column name="COMPONENT" length="100" />
+        </property>
+        <property name="isValid" type="int">
+            <column name="IS_VALID" />
+        </property>
+    </class>
+</hibernate-mapping>

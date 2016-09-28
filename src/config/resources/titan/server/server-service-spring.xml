@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+		
+	<bean id="serverService" class="com.hp.titan.server.service.impl.ServerServiceImpl" >
+		<property name="serverDao" ref="serverDao" />
+		<property name="reserveDao" ref="reserveDao" />
+		<property name="reserHistDao" ref="reserHistDao" />
+		<property name="cardDao" ref="cardDao" />
+		<property name="storageDao" ref="storageDao" />
+	</bean>
+	<bean id="reserveService" class="com.hp.titan.server.service.impl.ReserveServiceImpl" >
+		<property name="reserveDao" ref="reserveDao" />
+	</bean>
+	
+	
+</beans>
+

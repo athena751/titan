@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="report" extends="application-struts-default" namespace="/report">
+		<!-- Commit report-->
+		<action name="goCodeReport" class="com.hp.titan.report.action.ReportAction" method="goCodeReport">
+			<result name="success" type="freemarker">/pages/report/codeReport.ftl</result>
+		</action>
+		<action name="getReposByPorject" class="com.hp.titan.report.action.ReportAction" method="getReposByPorject">
+		</action>
+		<action name="getDefaultPeriod" class="com.hp.titan.report.action.ReportAction" method="getDefaultPeriod">
+		</action>
+		<action name="getCodeCommitChartXml" class="com.hp.titan.report.action.ReportAction" method="getCodeCommitChartXml">
+			<result name="success" type="freemarker">/pages/report/codeReport.ftl</result>
+		</action>
+		
+		<!-- Defect report-->
+		<action name="goDefectReport" class="com.hp.titan.report.action.ReportAction" method="goDefectReport">
+			<result name="success" type="freemarker">/pages/report/defectReport.ftl</result>
+		</action>
+		<action name="getRallyComponentByPorject" class="com.hp.titan.report.action.ReportAction" method="getRallyComponentByPorject">
+		</action>
+		<action name="getDefectChartXml" class="com.hp.titan.report.action.ReportAction" method="getDefectChartXml">
+			<result name="success" type="freemarker">/pages/report/defectReport.ftl</result>
+		</action>
+		
+		<!-- Contribution Report-->
+		<action name="goContribution" class="com.hp.titan.report.action.ReportAction" method="goContribution">
+			<result name="success" type="freemarker">/pages/report/contributionReport.ftl</result>
+		</action>
+		
+		<!-- StrongField Report-->
+		<action name="showStrongField" class="com.hp.titan.report.action.ReportAction" method="showStrongField">
+			<result name="success" type="freemarker">/pages/report/strongFieldReport.ftl</result>
+		</action>
+		
+		<!-- For Curtis Begin -->
+		<action name="goScope" class="com.hp.titan.report.action.ReportAction" method="goScopeReport">
+			<result name="success" type="freemarker">/pages/report/scopeReport.ftl</result>
+		</action>
+		<action name="getSprintPeriod" class="com.hp.titan.report.action.ReportAction" method="getSprintPeriod">
+		</action>
+		<action name="getScopeChartXml" class="com.hp.titan.report.action.ReportAction" method="getScopeChartXml">
+		</action>
+		<action name="goDefectDetail" class="com.hp.titan.report.action.ReportAction" method="goDefectDetail">
+			<result name="success" type="freemarker">/pages/project/rallyDetailList.ftl</result>
+		</action>
+		<!-- For Curtis End -->
+	</package>
+
+</struts>

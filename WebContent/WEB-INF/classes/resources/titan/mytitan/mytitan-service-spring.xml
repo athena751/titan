@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+		
+	<bean id="mytitanService" class="com.hp.titan.mytitan.service.impl.MyTitanServiceImpl" >
+		<property name="rallyDao" ref="rallyDao" />
+		<property name="mytitanDao" ref="mytitanDao" />
+	</bean>
+	
+</beans>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.PointHist" table="Point_Hist">
+        <id name="pointHistId" type="string">
+           <column name="POINT_HIST_ID" length="50" />
+           <generator class="uuid" />
+        </id>
+        <property name="pointFare" type="integer">
+            <column name="POINT_FARE" length="11" />
+        </property>
+        <property name="pointTotal" type="integer">
+            <column name="POINT_TOTAL" length="11" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="50" />
+        </property>
+        <property name="objectId" type="string">
+            <column name="OBJECT_ID" length="50" />
+        </property>
+        <property name="userId" type="integer">
+            <column name="USER_ID" length="11" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+         <property name="isValid" type="integer">
+            <column name="IS_VALID" length="11"/>
+        </property>
+    </class>
+</hibernate-mapping>

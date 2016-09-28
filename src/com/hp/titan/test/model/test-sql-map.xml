@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/hp/titan/test/model/Testcase.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Testplan.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Testjob.hbm.xml" />
+        <mapping resource="com/hp/titan/test/model/TestJobServer.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/RunJob.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Parameter.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/ParameterData.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/CaseLog.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Testjobcase.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Testjobplan.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/RunCaseServer.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/RunCaseParameter.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Testplancase.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/RunCase.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/DefaultParameter.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/CaseDefect.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/DefectInfo.hbm.xml" />
+		<mapping resource="com/hp/titan/test/model/Usertag.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

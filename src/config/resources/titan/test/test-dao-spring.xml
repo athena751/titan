@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+ 	<bean id="testcaseDao" class="com.hp.titan.test.dao.TestcaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 	<bean id="parameterDao" class="com.hp.titan.test.dao.ParameterDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="parameterdataDao" class="com.hp.titan.test.dao.ParameterdataDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 	<bean id="caseLogDao" class="com.hp.titan.test.dao.CaseLogDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
+	
+	<bean id="testplanDao" class="com.hp.titan.test.dao.TestplanDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="testjobDao" class="com.hp.titan.test.dao.TestjobDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="runJobDao" class="com.hp.titan.test.dao.RunJobDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="runCaseDao" class="com.hp.titan.test.dao.RunCaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="testjobcaseDao" class="com.hp.titan.test.dao.TestjobcaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="testjobplanDao" class="com.hp.titan.test.dao.TestjobplanDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="testplancaseDao" class="com.hp.titan.test.dao.TestplancaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="testjobserverDao" class="com.hp.titan.test.dao.TestjobserverDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="runcaseserverDao" class="com.hp.titan.test.dao.RuncaseserverDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="runcaseparameterDao" class="com.hp.titan.test.dao.RuncaseparameterDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="defectinfoDao" class="com.hp.titan.test.dao.DefectinfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

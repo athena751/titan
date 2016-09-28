@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.test.model.Testjob" table="TEST_JOB">
+        <id name="testjobId" type="string">
+           <column name="JOB_ID" length="50" />
+           <generator class="uuid" />
+        </id>
+        <property
+			name="testjobCode"
+			column="JOB_CODE"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="testjobName"
+			column="JOB_NAME"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		<property
+			name="jobType"
+			column="JOB_TYPE"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="ownerId"
+			column="OWNER_ID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="projectId"
+			column="PROJECT_ID"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="sprintId"
+			column="SPRINT_ID"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="timeout"
+			column="TIMEOUT"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="plancaseJson"
+			column="PLANCASE_JSON"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="state"
+			column="STATE"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="remark"
+			column="REMARK"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		<property
+			name="createUserId"
+			column="CREATE_USER_ID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="createDate"
+			column="CREATE_DATE"
+			type="timestamp"
+			not-null="false"
+			length="19"
+		/>
+		<property
+			name="updateUserId"
+			column="UPDATE_USER_ID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="updateDate"
+			column="UPDATE_DATE"
+			type="timestamp"
+			not-null="false"
+			length="19"
+		/>
+		<property
+			name="isValid"
+			column="IS_VALID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="tag"
+			column="TAG"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+               
+		<many-to-one name="owner" class="com.hp.titan.auth.model.User" lazy="false" update="false" insert="false" fetch="select">
+            <column name="OWNER_ID">
+                <comment>owner id</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="project" class="com.hp.titan.project.model.Project" lazy="false" update="false" insert="false" fetch="select">
+            <column name="PROJECT_ID">
+                <comment>Project id</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

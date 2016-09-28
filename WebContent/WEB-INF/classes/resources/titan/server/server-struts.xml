@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="server" extends="application-struts-default"	namespace="/server">
+
+		<action name="goServerReg" class="com.hp.titan.server.action.ServerAction" method="goServerReg" >
+			<result name="success" type="freemarker">/pages/server/serverReg.ftl</result>
+		</action>	
+		<action name="serverList" class="com.hp.titan.server.action.ServerAction" method="doSearchServer" >
+			<result name="success" type="freemarker">/pages/server/serverList.ftl</result>
+		</action>
+		<action name="returnDataFromIp" class="com.hp.titan.server.action.ServerAction" method="returnDataFromIp" >
+		</action>
+		<action name="refreshFromiloIP" class="com.hp.titan.server.action.ServerAction" method="refreshFromiloIP" >
+		</action>
+		<action name="insertOrUpdateDatabase" class="com.hp.titan.server.action.ServerAction" method="insertOrUpdateDatabase" >
+		</action>
+		<action name="serverAdmin" class="com.hp.titan.server.action.ServerAction" method="serverAdmin" >
+			<result name="success" type="freemarker">/pages/server/serverAdmin.ftl</result>
+		</action>
+		<action name="serverDiscover" class="com.hp.titan.server.action.ServerAction" method="serverDiscover" >
+			<result name="success" type="freemarker">/pages/server/serverDiscover.ftl</result>
+		</action>
+		<action name="doServerSave" class="com.hp.titan.server.action.ServerAction" method="doServerSave">
+			<result name="success" type="redirect">serverAdmin.do?serverList=${serverList}</result>
+		</action>
+		<action name="doServerUpdate" class="com.hp.titan.server.action.ServerAction" method="doServerUpdate">
+			<result name="success" type="redirect">serverList.do</result>
+		</action>
+		<action name="doServerUpdateAll" class="com.hp.titan.server.action.ServerAction" method="doServerUpdateAll">
+			<result name="success" type="redirect">serverAdmin.do?serverList=${serverList}</result>
+		</action>
+		<action name="goServerUpdate" class="com.hp.titan.server.action.ServerAction" method="goServerUpdate">
+			<result name="success" type="freemarker">/pages/server/serverEdit.ftl</result>
+		</action>	
+		<action name="goServerUpdateAll" class="com.hp.titan.server.action.ServerAction" method="goServerUpdateAll">
+			<result name="success" type="freemarker">/pages/server/serverEditAll.ftl</result>
+		</action>	
+	
+		
+		<action name="goServerDisable" class="com.hp.titan.server.action.ServerAction" method="goServerDisable">
+			<result name="success" type="redirect">serverAdmin.do</result>
+		</action>
+		
+		<action name="goServerView" class="com.hp.titan.server.action.ServerAction" method="goServerView">
+			<result name="success" type="freemarker">/pages/server/serverView.ftl</result>
+		</action>
+		<action name="goCardViewDetail" class="com.hp.titan.server.action.ServerAction" method="goCardViewDetail">
+			<result name="success" type="freemarker">/pages/server/cardView.ftl</result>
+		</action>
+		<action name="goServerViewFromSearch" class="com.hp.titan.server.action.ServerAction" method="goServerViewFromSearch">
+			<result name="success" type="freemarker">/pages/server/serverView.ftl</result>
+		</action>
+		
+		<action name="checkServerName" class="com.hp.titan.server.action.ServerAction" method="checkServerName">
+		</action>
+		<action name="goAdvanceSearch" class="com.hp.titan.server.action.ServerAction" method="goAdvanceSearch">
+			<result name="success" type="freemarker">/pages/server/advanceSearch.ftl</result>
+		</action>
+		<action name="doAdvanceSearch" class="com.hp.titan.server.action.ServerAction" method="doAdvanceSearch">
+			<result name="success" type="freemarker">/pages/server/advanceSearch.ftl</result>
+		</action>
+		
+		
+		<!-- reservation -->
+
+		<action name="goServerReserve" class="com.hp.titan.server.action.ServerAction" method="goServerReserve" >
+			<result name="success" type="freemarker">/pages/server/reserveCreate.ftl</result>
+		</action>		
+		<action name="goCardReserve" class="com.hp.titan.server.action.ServerAction" method="goCardReserve" >
+			<result name="success" type="freemarker">/pages/server/reserveCreate.ftl</result>
+		</action>		
+		<action name="goServerReserve" class="com.hp.titan.server.action.ServerAction" method="goServerReserve" >
+			<result name="success" type="freemarker">/pages/server/reserveCreate.ftl</result>
+		</action>		
+		<action name="goReserveUpdate" class="com.hp.titan.server.action.ServerAction" method="goReserveUpdate" >
+			<result name="success" type="freemarker">/pages/server/reserveEdit.ftl</result>
+		</action>
+		<action name="goReserveView" class="com.hp.titan.server.action.ServerAction" method="goReserveView">
+			<result name="success" type="freemarker">/pages/server/reserveEdit.ftl</result>
+		</action>
+		<action name="updateReserve" class="com.hp.titan.server.action.ServerAction" method="updateReserve" >
+			<result name="success" type="redirect">reserveList.do?showType=${showType}</result>
+		</action>			
+		<action name="saveReserv" class="com.hp.titan.server.action.ServerAction" method="saveReserv" >
+			<result name="success" type="redirect">reserveList.do?showType=${showType}</result>
+		</action>
+		<action name="reserveList" class="com.hp.titan.server.action.ServerAction" method="reserveList" >
+			<result name="success" type="freemarker">/pages/server/reserveList.ftl</result>
+		</action>		
+		<action name="releaseServer" class="com.hp.titan.server.action.ServerAction" method="releaseServer" >
+			<result name="success" type="redirect">reserveList.do</result>
+		</action>				
+		<action name="releaseCard" class="com.hp.titan.server.action.ServerAction" method="releaseCard" >
+			<result name="success" type="redirect">reserveList.do?showType=${showType}</result>
+		</action>		
+		<action name="goServerTakeOver" class="com.hp.titan.server.action.ServerAction" method="goServerTakeOver" >
+			<result name="success" type="redirect">serverList.do</result>
+		</action>
+		
+		<action name="goCardTakeOver" class="com.hp.titan.server.action.ServerAction" method="goCardTakeOver" >
+			<result name="success" type="redirect">serverList.do?showType=${showType}</result>
+		</action>		
+		<action name="returnServer" class="com.hp.titan.server.action.ServerAction" method="returnServer" >
+			<result name="success" type="redirect">reserveList.do</result>
+		</action>
+		<action name="returnCard" class="com.hp.titan.server.action.ServerAction" method="returnCard" >
+			<result name="success" type="redirect">reserveList.do?showType=${showType}</result>
+		</action>
+		<action name="checkServerStatus" class="com.hp.titan.server.action.ServerAction" method="checkServerStatus" >		
+		</action>
+		<action name="checkCardStatus" class="com.hp.titan.server.action.ServerAction" method="checkCardStatus" >		
+		</action>
+           
+        <!-- cards -->
+        
+        <action name="cardList" class="com.hp.titan.server.action.ServerAction" method="doSearchCard" >
+			<result name="success" type="freemarker">/pages/server/cardAdmin.ftl</result>
+		</action>		
+		<action name="goCardReg" class="com.hp.titan.server.action.ServerAction" method="goCardReg" >
+			<result name="success" type="freemarker">/pages/server/cardReg.ftl</result>
+		</action>		
+		<action name="doCardSave" class="com.hp.titan.server.action.ServerAction" method="doCardSave" >
+			<result name="success" type="redirect">cardList.do</result>
+		</action>		
+		<action name="goCardUpdate" class="com.hp.titan.server.action.ServerAction" method="goCardUpdate" >
+			<result name="success" type="freemarker">/pages/server/cardEdit.ftl</result>
+		</action>
+		<action name="doCardUpdate" class="com.hp.titan.server.action.ServerAction" method="doCardUpdate" >
+			<result name="success" type="redirect">cardList.do</result>
+			<result name="cardResUpdate" type="redirect">serverList.do?showType=${showType}</result>
+		</action>		
+		<action name="goCardView" class="com.hp.titan.server.action.ServerAction" method="goCardView" >
+			<result name="success" type="freemarker">/pages/server/cardEdit.ftl</result>
+		</action>
+		
+		
+		<!-- storages -->
+		
+		 <action name="storageList" class="com.hp.titan.server.action.ServerAction" method="doSearchStorage" >
+			<result name="success" type="freemarker">/pages/server/storageAdmin.ftl</result>
+		</action>
+		<action name="goStorageReg" class="com.hp.titan.server.action.ServerAction" method="goStorageReg" >
+			<result name="success" type="freemarker">/pages/server/storageReg.ftl</result>
+		</action>
+		<action name="doStorageSave" class="com.hp.titan.server.action.ServerAction" method="doStorageSave" >
+			<result name="success" type="redirect">storageList.do</result>
+		</action>	
+		<action name="goStorageUpdate" class="com.hp.titan.server.action.ServerAction" method="goStorageUpdate" >
+			<result name="success" type="freemarker">/pages/server/storageEdit.ftl</result>
+		</action>		
+		<action name="doStorageUpdate" class="com.hp.titan.server.action.ServerAction" method="doStorageUpdate" >
+			<result name="success" type="redirect">storageList.do</result>
+		</action>
+		<action name="goStorageView" class="com.hp.titan.server.action.ServerAction" method="goStorageView" >
+			<result name="success" type="freemarker">/pages/server/storageEdit.ftl</result>
+		</action>
+		
+		<!-- report -->
+		<action name="goDeviceReport" class="com.hp.titan.server.action.ServerAction" method="goDeviceReport" >
+			<result name="success" type="freemarker">/pages/server/deviceReport.ftl</result>
+		</action>
+		<action name="getChartXml" class="com.hp.titan.server.action.ServerAction" method="getChartXml" >
+		</action>
+		<action name="goResReport" class="com.hp.titan.server.action.ServerAction" method="goResReport" >
+			<result name="success" type="freemarker">/pages/server/resReport.ftl</result>
+		</action>
+		
+		
+		
+		
+	</package>
+</struts>

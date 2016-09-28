@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.RoleAuth" table="titan_role_auth" >
+    	<composite-id name="id" class="com.hp.titan.auth.model.RoleAuthId">
+            <key-property name="authId" type="string">
+                <column name="AUTH_ID" length="40" />
+            </key-property>
+            <key-property name="roleId" type="string">
+                <column name="ROLE_ID" length="40" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="auth" class="com.hp.titan.auth.model.Auth" update="false" insert="false" lazy="false" >
+            <column name="AUTH_ID" length="40" not-null="true">
+                <comment>角色ID</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

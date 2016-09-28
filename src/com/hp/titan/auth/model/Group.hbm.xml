@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.Group" table="titan_group" >
+        <id name="groupId" type="int">
+            <column name="GROUP_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="groupName" type="string">
+            <column name="GROUP_NAME" length="300" not-null="true" unique="true">
+                <comment>group name</comment>
+            </column>
+        </property>
+		<property name="descritption" type="string">
+            <column name="DESCRITPION">
+                <comment>description</comment>
+            </column>
+        </property>
+        <property name="level" type="int">
+            <column name="LEVEL" length="200">
+                <comment>level</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK">
+                <comment>remark</comment>
+            </column>
+        </property>
+     	<property name="isValid" type="int">
+            <column name="IS_VALID" >
+                <comment>vaild</comment>
+            </column>
+        </property>
+        
+        <property name="createUser" type="int">
+            <column name="CREATE_USER_ID" >
+                <comment>create user</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" >
+                <comment>create date</comment>
+            </column>
+        </property>
+        <property name="lastUpdateUser" type="int">
+            <column name="UPDATE_USER_ID" >
+                <comment>update user</comment>
+            </column>
+        </property>
+        <property name="lastUpdate_Date" type="timestamp">
+            <column name="UPDATE_DATE" >
+                <comment>update date</comment>
+            </column>
+        </property>
+        <!--  
+        <property name="supperGroupId" type="string">
+            <column name="SUPPER_GROUP_ID" length="300">
+                <comment>上一级用户组ID</comment>
+            </column>
+        </property>
+        <property name="supperGroupName" type="string">
+            <column name="SUPPER_GROUP_NAME" length="200">
+                <comment>上一级用户组名称</comment>
+            </column>
+        </property>-->
+          <set 
+			name="users" 
+			table="titan_USER_GROUP" 
+			lazy="true" 
+			inverse="false" 
+			> 
+			<key  column="GROUP_ID" /> 
+			<many-to-many 
+			    class="com.hp.titan.auth.model.User" 
+			column="USER_ID" 
+			/> 
+		</set>
+    </class>
+</hibernate-mapping>

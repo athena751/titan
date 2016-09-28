@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.WeeklyReportTask" table="WEEKLY_REPORT_TASKS">
+        <id name="reporttaskId" type="string">
+            <column name="REPORT_TASK_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="reportId" type="string">
+            <column name="REPORT_ID" length="50" />
+        </property>
+        <property name="taskType" type="string">
+            <column name="TASK_TYPE" length="10" />
+        </property>
+        <property name="actuals" type="string">
+            <column name="ACTUALS" length="5" />
+        </property>
+         <property name="todo" type="string">
+            <column name="TODO" length="5"/>
+        </property>
+         <property name="percent" type="string">
+            <column name="PERCENT"  length="5"/>
+        </property>
+        <property name="parent" type="string">
+            <column name="PARENT"  length="20"/>
+        </property>
+        <property name="taskName" type="string">
+            <column name="TASK_NAME" length="300" />
+        </property>
+        <property name="desciption" type="string">
+            <column name="DESCRIPTION" length="1000" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

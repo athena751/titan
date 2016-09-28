@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="test" extends="application-struts-default" namespace="/test">
+
+		<!-- test case -->
+		<action name="testcaseList" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseList" >
+			<result name="success" type="freemarker">/pages/testCase/testcaseList.ftl</result>
+		</action>
+		<action name="doTestcaseFilter" class="com.hp.titan.test.action.TestcaseAction" method="goSearchTestcase" >
+			<result name="success" type="freemarker">/pages/testCase/testcaseList.ftl</result>
+		</action>
+ 		<action name="goTestcaseCreate" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseCreate">
+			<result name="success" type="freemarker">/pages/testCase/testcaseCreate.ftl</result>
+		</action>
+		<action name="goTestcaseView" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseView">
+			<result name="success" type="freemarker">/pages/testCase/testcaseView.ftl</result>
+		</action>
+ 		<action name="checkTestcaseName" class="com.hp.titan.test.action.TestcaseAction" method="checkTestcaseName">
+		</action>
+ 		<action name="getProjectModules" class="com.hp.titan.project.action.ProjectAction" method="getProjectModules">
+		</action>
+ 		<action name="getDedicatedServers" class="com.hp.titan.project.action.ProjectAction" method="getDedicatedServers">
+		</action>
+		<action name="getServerParameterData" class="com.hp.titan.test.action.TestcaseAction" method="getServerParameterData">
+		</action>
+		<action name="getParameterData" class="com.hp.titan.test.action.TestcaseAction" method="getParameterData">
+		</action>
+ 		<action name="doTestcaseSave" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseSave">
+			<result name="success" type="redirect">testcaseList.do</result>
+		</action>
+ 		<action name="doTestcaseSaveNext" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseSave">
+			<result name="success" type="redirect">goTestcaseCreate.do</result>
+		</action>
+ 		<action name="doTestcaseAutoNext" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseSave">
+			<result name="success" type="freemarker">/pages/testCase/testcaseUpload.ftl</result>
+		</action>
+		<action name="goTestcaseUpdate" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseUpdate">
+			<result name="success" type="freemarker">/pages/testCase/testcaseEdit.ftl</result>
+		</action>
+		<action name="doTestcaseUpdate" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseUpdate">
+			<result name="success" type="redirect">testcaseList.do</result>
+		</action>
+ 		<action name="doTestcaseAutoUpdateNext" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseUpdate">
+			<result name="success" type="freemarker">/pages/testCase/testcaseUpload.ftl</result>
+		</action>
+		<action name="goTestcaseDisable" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseDisable">
+			<result name="success" type="redirect">testcaseList.do</result>
+		</action>
+		<action name="doTestcaseDelete" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseDelete">
+			<result name="success" type="redirect">testcaseList.do</result>
+		</action>
+		<action name="doTestcaseDelete" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseDelete">
+			<result name="success" type="redirect">testcaseList.do</result>
+		</action>
+		<action name="doFileDelete" class="com.hp.titan.test.action.TestcaseAction" method="doFileDelete">
+		</action>
+		<action name="doTestcaseBatchUpload" class="com.hp.titan.test.action.TestcaseAction" method="doTestcaseBatchUpload">
+		</action>		
+		<action name="getTestCaseDetail" class="com.hp.titan.test.action.TestcaseAction" method="getTestCaseDetail">
+		</action>
+		<action name="checkCaseHasBeenUsed" class="com.hp.titan.test.action.TestcaseAction" method="checkCaseHasBeenUsed">
+		</action>
+		<action name="remCaseHasBeenUsed" class="com.hp.titan.test.action.TestcaseAction" method="remCaseHasBeenUsed">
+		</action>
+		
+		<!-- test plan -->
+		<action name="testplanList" class="com.hp.titan.test.action.TestplanAction" method="goTestplanList" >
+			<result name="success" type="freemarker">/pages/testPlan/testplanList.ftl</result>
+		</action>
+		<action name="goTestplanCreate" class="com.hp.titan.test.action.TestplanAction" method="goTestplanCreate" >
+			<result name="success" type="freemarker">/pages/testPlan/testplanCreate.ftl</result>
+		</action>
+		<action name="doTestplanSave" class="com.hp.titan.test.action.TestplanAction" method="doTestplanSave" >
+			<result name="success" type="freemarker">/pages/testPlan/testplanManagement.ftl</result>
+		</action>
+		<action name="checkTestplanName" class="com.hp.titan.test.action.TestplanAction" method="checkTestplanName">
+		</action>
+		<action name="goTestplanEdit" class="com.hp.titan.test.action.TestplanAction" method="goTestplanEdit" >
+			<result name="success" type="freemarker">/pages/testPlan/testplanEdit.ftl</result>
+		</action>
+		<action name="doTestplanUpdate" class="com.hp.titan.test.action.TestplanAction" method="doTestplanUpdate" >
+			<result name="success" type="freemarker">/pages/testPlan/testplanManagement.ftl</result>
+		</action>
+		<action name="doTestplanRemove" class="com.hp.titan.test.action.TestplanAction" method="doTestplanRemove">
+			<result name="success" type="redirect">testplanList.do</result>
+		</action>
+		<!--<action name="goPlanManage" class="com.hp.titan.test.action.TestplanAction" method="goPlanManage">
+			<result name="success" type="freemarker">/pages/testPlan/testplanManagement.ftl</result>
+		</action>
+		--><action name="doTestPlanManage" class="com.hp.titan.test.action.TestplanAction" method="doTestPlanManage">
+			<result name="success" type="redirect">testplanList.do</result>
+		</action>
+		<action name="getPlanShow" class="com.hp.titan.test.action.TestplanAction" method="getPlanShow">
+		</action>
+		<action name="goTestplanCopy" class="com.hp.titan.test.action.TestplanAction" method="goTestplanCopy">
+			<result name="success" type="redirect">testplanList.do</result>
+		</action>
+		<action name="checkPlanHasBeenUsed" class="com.hp.titan.test.action.TestplanAction" method="checkPlanHasBeenUsed">
+		</action>
+		<!-- test job -->
+		<action name="testjobList" class="com.hp.titan.test.action.TestjobAction" method="goTestjobList" >
+			<result name="success" type="freemarker">/pages/testJob/testjobList.ftl</result>
+		</action>
+		<action name="goTestjobCreate" class="com.hp.titan.test.action.TestjobAction" method="goTestjobCreate" >
+			<result name="success" type="freemarker">/pages/testJob/testjobCreate.ftl</result>
+		</action>
+		<action name="goTestjobEdit" class="com.hp.titan.test.action.TestjobAction" method="goTestjobEdit" >
+			<result name="success" type="freemarker">/pages/testJob/testjobEdit.ftl</result>
+		</action>
+		<action name="getJobShow" class="com.hp.titan.test.action.TestjobAction" method="getJobShow">
+		</action>
+		<action name="doTestjobSave" class="com.hp.titan.test.action.TestjobAction" method="doTestjobSave" >
+			<result name="success" type="freemarker">/pages/testJob/testJobManagement.ftl</result>
+		</action>	
+		<action name="doTestjobUpdate" class="com.hp.titan.test.action.TestjobAction" method="doTestjobUpdate" >
+			<result name="success" type="freemarker">/pages/testJob/testJobManagement.ftl</result>
+		</action>	
+		<action name="dotestjobRemove" class="com.hp.titan.test.action.TestjobAction" method="dotestjobRemove" >
+			<result name="success" type="redirect">testjobList.do</result>
+		</action>
+		<action name="goTestJobManage" class="com.hp.titan.test.action.TestjobAction" method="goTestJobManage" >
+			<result name="success" type="freemarker">/pages/testJob/testJobManagement.ftl</result>
+		</action>
+		<action name="doTestJobManageRun" class="com.hp.titan.test.action.TestjobAction" method="doTestJobManageRun" >
+			<result name="success" type="freemarker">/pages/testJob/testJobRun.ftl</result>
+		</action>
+		<action name="goMTestJobManageRun" class="com.hp.titan.test.action.TestjobAction" method="goMTestJobManageRun" >
+			<result name="success" type="freemarker">/pages/testJob/testjobMIRun.ftl</result>
+		</action>
+		<action name="doTestJobManageSave" class="com.hp.titan.test.action.TestjobAction" method="doTestJobManage" >
+			<result name="success" type="redirect">testjobList.do</result>
+		</action>
+		<action name="goCaseManageBox" class="com.hp.titan.test.action.TestjobAction" method="goCaseManageBox" >
+		</action>
+		<action name="doCaseManageBox" class="com.hp.titan.test.action.TestjobAction" method="doCaseManageBox" >
+		</action>
+		<action name="goTestJobRun" class="com.hp.titan.test.action.TestjobAction" method="goAutoTestJobRun" >
+			<result name="success" type="freemarker">/pages/testJob/testJobRun.ftl</result>
+		</action>
+		<action name="goMTestJobRun" class="com.hp.titan.test.action.TestjobAction" method="goMTestJobRun" >
+			<result name="success" type="freemarker">/pages/testJob/testjobMIRun.ftl</result>
+		</action>
+		<action name="goViewMJobRun" class="com.hp.titan.test.action.TestjobAction" method="goViewMJobRun" >
+			<result name="success" type="freemarker">/pages/testJob/testjobMIRun.ftl</result>
+		</action>
+		<action name="goTestcaseRun" class="com.hp.titan.test.action.TestjobAction" method="goTestcaseRun" >
+			<result name="success" type="freemarker">/pages/testJob/testcaseRun.ftl</result>
+		</action>		
+		<action name="goJobRunList" class="com.hp.titan.test.action.TestjobAction" method="goJobRunList" >
+			<result name="success" type="freemarker">/pages/testJob/testJobRunList.ftl</result>
+		</action>
+		<action name="goJobAutoRunList" class="com.hp.titan.test.action.TestjobAction" method="goJobRunList" >
+			<result name="success" type="freemarker">/pages/testJob/testJobAutoRunList.ftl</result>
+		</action>
+		<action name="doCasesRun" class="com.hp.titan.test.action.TestjobAction" method="doCasesRun" >
+		</action>
+		<action name="doRuncaseSave" class="com.hp.titan.test.action.TestjobAction" method="doRuncaseSave" >
+			<result name="success" type="freemarker">/pages/testJob/testjobMIRun.ftl</result>
+		</action>
+		<action name="doCreateRunJob" class="com.hp.titan.test.action.TestjobAction" method="doCreateRunJob" >
+		</action>
+		<action name="doRunOnCommand" class="com.hp.titan.test.action.TestjobAction" method="doRunOnCommand" >
+		</action>
+		<action name="doCreateRunCase" class="com.hp.titan.test.action.TestjobAction" method="doCreateRunCase" >
+		</action>
+		<action name="doupdatejobStatus" class="com.hp.titan.test.action.TestjobAction" method="doupdatejobStatus" >
+		</action>
+		<action name="checkIsTestJobRunning" class="com.hp.titan.test.action.TestjobAction" method="checkIsTestJobRunning" >
+		</action>
+		<action name="getRunCaseLog" class="com.hp.titan.test.action.TestjobAction" method="getRunCaseLog" >
+		</action>
+		<action name="getRunCaseHistory" class="com.hp.titan.test.action.TestjobAction" method="getRunCaseHistory" >
+		</action>
+		<action name="getDefectDetailInfo" class="com.hp.titan.test.action.TestjobAction" method="getDefectDetailInfo" >
+		</action>
+		<action name="doSaveCaseDefect" class="com.hp.titan.test.action.TestjobAction" method="doSaveCaseDefect" >
+		</action>
+		<action name="getRunCaseRelateLog" class="com.hp.titan.test.action.TestjobAction" method="getRunCaseRelateLog" >
+		</action>
+		<action name="getCaseInfo" class="com.hp.titan.test.action.TestjobAction" method="getCaseInfo" >
+		</action>
+		<action name="getSprintsByPorject" class="com.hp.titan.sprint.action.SprintAction" method="getSprintsByPorject">
+		</action>		
+		<action name="testjobResult" class="com.hp.titan.test.action.TestjobAction" method="testjobResult" >
+			<result name="success" type="freemarker">/pages/testJob/testjobResult.ftl</result>
+		</action>
+	   <action name="goBatchUpdateResult" class="com.hp.titan.test.action.TestjobAction" method="goBatchUpdateResult" >
+			<result name="success" type="freemarker">/pages/testJob/testjobMIRun.ftl</result>
+		</action>
+		<action name="getCaseState" class="com.hp.titan.test.action.TestjobAction" method="getCaseState">
+		</action>
+		<action name="getChartXml" class="com.hp.titan.test.action.TestjobAction" method="getChartXml">
+		</action>
+		<action name="saveDefaultPara" class="com.hp.titan.test.action.TestjobAction" method="saveDefaultPara">
+		</action>
+		<action name="doStopRunJob" class="com.hp.titan.test.action.TestjobAction" method="doStopRunJob">
+		</action>
+		<action name="getDefectByRunCaseId" class="com.hp.titan.test.action.TestjobAction" method="getDefectByRunCaseId">
+		</action>
+		<action name="goTestjobReport" class="com.hp.titan.test.action.TestjobAction" method="goTestjobReport">
+		    <result name="success" type="freemarker">/pages/testJob/testjobReport.ftl</result>
+		</action>
+		<action name="getTestjobBySprint" class="com.hp.titan.test.action.TestjobAction" method="getTestjobBySprint">
+		</action>
+		<action name="goTestcaseReport" class="com.hp.titan.test.action.TestcaseAction" method="goTestcaseReport">
+		    <result name="success" type="freemarker">/pages/testCase/testCaseReport.ftl</result>
+		</action>
+		
+		
+	</package>
+
+</struts>

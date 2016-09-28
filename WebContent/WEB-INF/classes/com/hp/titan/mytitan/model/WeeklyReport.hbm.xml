@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.WeeklyReport" table="WEEKLY_REPORT">
+        <id name="reportId" type="string">
+            <column name="REPORT_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="USER_ID" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="10" />
+        </property>
+        <property name="sendTo" type="string">
+            <column name="SEND_TO" length="100" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="300" />
+        </property>
+        <property name="report" type="text">
+            <column name="REPORT" length="10" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <property name="misc" type="string">
+            <column name="MISC" length="6000" />
+        </property>
+        <property name="issue" type="string">
+            <column name="ISSUE" length="6000" />
+        </property>
+        <property name="planNextweek" type="string">
+       	 	<column name="PLANNEXTWEEK" length="6000" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

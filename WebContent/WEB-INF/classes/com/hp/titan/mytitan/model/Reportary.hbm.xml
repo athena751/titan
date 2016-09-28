@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.Reportary" table="REPORTARY">
+        <id name="reportaryId" type="string">
+            <column name="REPORTARY_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="projectId" type="string">
+            <column name="PROJECT_ID" length="50" />
+        </property>
+        <property name="svnUrl" type="string">
+            <column name="SVN_URL" length="300" />
+        </property>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="100" />
+        </property>
+        <property name="pwd" type="string">
+            <column name="PWD" length="100" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="1000" />
+        </property>
+        <property name="moduleId" type="string">
+            <column name="MODULE_ID" length="100" />
+        </property>
+        <property name="beginDate" type="timestamp">
+            <column name="BEGIN_DATE" length="19" />
+        </property>
+        <property name="isValid" type="int">
+            <column name="IS_VALID" />
+        </property>
+        <property name="autoRefresh" type="string">
+            <column name="AUTO_REFRESH" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

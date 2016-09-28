@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="serverDao"
+		class="com.hp.titan.server.dao.ServerDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="mgr" ref="snmpFactory" />
+	</bean>
+	
+	<bean id="reserveDao"
+		class="com.hp.titan.server.dao.ReserveDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="reserHistDao"
+		class="com.hp.titan.server.dao.ReserHistDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="cardDao"
+		class="com.hp.titan.server.dao.CardDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="storageDao"
+		class="com.hp.titan.server.dao.StorageDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

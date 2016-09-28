@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.CommitPath" table="COMMIT_CHANGED_PATH">
+        <id name="commitpathId" type="string">
+            <column name="COMMIT_PATH_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="commitreportId" type="string">
+            <column name="COMMIT_REPORT_ID" length="50" />
+        </property>
+        <property name="path" type="string">
+            <column name="PATH" length="500" />
+        </property>
+        <property name="codeChange" type="string">
+            <column name="CODE_CHANGED" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

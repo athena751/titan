@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="project" extends="application-struts-default" namespace="/project">
+
+	
+	 	<action name="projectList" class="com.hp.titan.project.action.ProjectAction" method="doSearchProjects">
+				<result name="success" type="freemarker">/pages/project/projectList.ftl</result>
+		</action>
+		
+		<action name="myprojectList" class="com.hp.titan.project.action.ProjectAction" method="doSearchMyProjects">
+				<result name="success" type="freemarker">/pages/project/myProjectList.ftl</result>
+		</action>
+		
+		<action name="goProjectCreate" class="com.hp.titan.project.action.ProjectAction" method="goProjectCreate">
+			<result name="success" type="freemarker">/pages/project/projectEdit.ftl</result>
+		</action>
+		
+		<action name="goProjectView" class="com.hp.titan.project.action.ProjectAction" method="goProjectView">
+			<result name="success" type="freemarker">/pages/project/projectView.ftl</result>
+		</action>
+		
+		<action name="getChartXml" class="com.hp.titan.project.action.ProjectAction" method="getChartXml">
+		</action>
+		
+		<action name="doProjectSave" class="com.hp.titan.project.action.ProjectAction" method="doProjectSave">
+				<result name="success" type="redirect">projectList.do</result>
+		</action>
+		
+		<action name="goProjectUpdate" class="com.hp.titan.project.action.ProjectAction" method="goProjectUpdate">
+			<result name="success" type="freemarker">/pages/project/projectEdit.ftl</result>
+		</action>
+		
+		<action name="doProjectRemove" class="com.hp.titan.project.action.ProjectAction" method="doProjectRemove">
+				<result name="success" type="redirect">projectList.do</result>
+		</action>
+		
+		<action name="checkProjectName" class="com.hp.titan.project.action.ProjectAction" method="checkProjectName">
+		</action>
+		
+		<action name="checkProjectHasSpring" class="com.hp.titan.project.action.ProjectAction" method="checkProjectHasSpring">
+		</action>
+		
+		<action name="goProjectReport" class="com.hp.titan.project.action.ProjectAction" method="goProjectReport">
+		      <result name="success" type="freemarker">/pages/project/projectReport.ftl</result>
+		</action>
+		
+		<action name="goProjectAddRally" class="com.hp.titan.project.action.ProjectAction" method="goProjectAddRally">
+			<result name="success" type="freemarker">/pages/project/projectAddRally.ftl</result>
+		</action>
+		
+		<action name="goProjectAddQuix" class="com.hp.titan.project.action.ProjectAction" method="goProjectAddQuix">
+			<result name="success" type="freemarker">/pages/project/projectAddQuix.ftl</result>
+		</action>
+		
+		<action name="doProjectAddRally" class="com.hp.titan.project.action.ProjectAction" method="doProjectAddRally">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="doProjectAddQuix" class="com.hp.titan.project.action.ProjectAction" method="doProjectAddQuix">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="goUpdateRally" class="com.hp.titan.project.action.ProjectAction" method="goUpdateRally">
+			<result name="success" type="freemarker">/pages/project/projectAddRally.ftl</result>
+		</action>
+		
+		<action name="goUpdateQuix" class="com.hp.titan.project.action.ProjectAction" method="goUpdateQuix">
+			<result name="success" type="freemarker">/pages/project/projectAddQuix.ftl</result>
+		</action>
+		
+		<action name="doRallyDelete" class="com.hp.titan.project.action.ProjectAction" method="doRallyDelete">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="doQuixDelete" class="com.hp.titan.project.action.ProjectAction" method="doQuixDelete">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="reportaryList" class="com.hp.titan.project.action.ProjectAction" method="reportaryList">
+			<result name="success" type="freemarker">/pages/project/myReportaryList.ftl</result>
+		</action>
+		
+		<action name="goProjectAddReport" class="com.hp.titan.project.action.ProjectAction" method="goProjectAddReport">
+			<result name="success" type="freemarker">/pages/project/myReportaryEdit.ftl</result>
+		</action>
+		
+		<action name="doReportarySave" class="com.hp.titan.project.action.ProjectAction" method="doReportarySave">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="goReportaryUpdate" class="com.hp.titan.project.action.ProjectAction" method="goReportaryUpdate">
+			<result name="success" type="freemarker">/pages/project/myReportaryEdit.ftl</result>
+		</action>
+		
+		<action name="doReportaryDelete" class="com.hp.titan.project.action.ProjectAction" method="doReportaryDelete">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="doReportaryUpdate" class="com.hp.titan.project.action.ProjectAction" method="doReportaryUpdate">
+			<result name="success" type="redirect">reportaryList.do?projectId=${(projectId)}&amp;settingType=${(settingType)}</result>
+		</action>
+		
+		<action name="syncCommit" class="com.hp.titan.project.action.ProjectAction" method="syncCommit">
+		</action>
+		
+		<action name="goRallyDetailView" class="com.hp.titan.project.action.ProjectAction" method="goRallyDetailView">
+			<result name="success" type="freemarker">/pages/project/rallyDetailList.ftl</result>
+		</action>
+		<action name="goQuixDetailView" class="com.hp.titan.project.action.ProjectAction" method="goQuixDetailView">
+			<result name="success" type="freemarker">/pages/project/quixDetailList.ftl</result>
+		</action>
+		<action name="syncRally" class="com.hp.titan.project.action.ProjectAction" method="syncRally">
+		</action>
+		
+		<action name="syncQuix" class="com.hp.titan.project.action.ProjectAction" method="syncQuix">
+		</action>
+	</package>
+</struts>

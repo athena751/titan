@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-22 11:45:36 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.User" table="titan_user" >
+  		<id name="userId" type="int">
+            <column name="USER_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="userCode" type="string" >
+            <column name="USER_CODE" length="100" >
+                <comment>user code</comment>
+            </column>
+        </property>
+        <property name="status" type="string" >
+            <column name="STATUS" length="100" >
+                <comment>status</comment>
+            </column>
+        </property>
+        <property name="mail" type="string">
+            <column name="MAIL" length="200">
+                <comment>email</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="200">
+                <comment>pwd</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="200">
+                <comment>remark</comment>
+            </column>
+        </property>
+        <property name="confirmUserId" type="int">
+            <column name="CONFIRM_USER">
+                <comment>confirm manager</comment>
+            </column>
+        </property>
+        <property name="defaultprojectId" type="string">
+            <column name="DEFAULT_PROJECT_ID" length="100">
+                <comment>DEFAULT_PROJECT_ID</comment>
+            </column>
+        </property>
+  
+         <property name="isValid" type="int">
+            <column name="IS_VALID" >
+                <comment>valid</comment>
+            </column>
+        </property>
+        
+        <property name="createUser" type="int">
+            <column name="CREATE_USER_ID" >
+                <comment>create user</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" >
+                <comment>create date</comment>
+            </column>
+        </property>
+        <property name="lastUpdateUser" type="int">
+            <column name="UPDATE_USER_ID" >
+                <comment>update user</comment>
+            </column>
+        </property>
+        <property name="lastUpdate_Date" type="timestamp">
+            <column name="UPDATE_DATE" >
+                <comment>update date</comment>
+            </column>
+        </property>
+        
+    	<set name="userGroups" 	table="titan_user_group" lazy="false" inverse="true" > 
+				<key  column="USER_ID"  /> 
+				<many-to-many   class="com.hp.titan.auth.model.Group" column="GROUP_ID" 	/> 
+		</set>
+		
+		<set name="userProjects" 	table="titan_user_project" lazy="false" inverse="true" > 
+				<key  column="USER_ID"  /> 
+				<many-to-many   class="com.hp.titan.project.model.Project" column="PROJECT_ID" 	/> 
+		</set>
+ 
+        <set name="userRoles"  table="titan_user_role" 	lazy="false" inverse="true" 			> 
+				<key   column="USER_ID"  /> 
+				<many-to-many  class="com.hp.titan.auth.model.Role" column="ROLE_ID" 	/> 
+		</set> 
+		 
+    </class>
+</hibernate-mapping>

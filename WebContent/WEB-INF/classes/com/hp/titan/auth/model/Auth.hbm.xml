@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.Auth" table="titan_auth" >
+        <id name="authId" type="string">
+            <column name="AUTH_ID" length="40" />
+            <generator class="uuid" />
+        </id>
+        <property name="authName" type="string">
+            <column name="AUTH_NAME" length="50"  />
+        </property>
+        <property name="authDesc" type="string">
+            <column name="AUTH_DESC" length="200" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="1000" />
+        </property>
+        <property name="isValid" type="int">
+            <column name="IS_VALID" />
+        </property>
+   		<property name="menuId" type="int">
+            <column name="MENU_ID" />
+        </property>
+        
+        <property name="createUser" type="int">
+            <column name="CREATE_USER_ID" >
+                <comment>create user</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" >
+                <comment>create date</comment>
+            </column>
+        </property>
+        <property name="lastUpdateUser" type="int">
+            <column name="UPDATE_USER_ID" >
+                <comment>update user</comment>
+            </column>
+        </property>
+        <property name="lastUpdate_Date" type="timestamp">
+            <column name="UPDATE_DATE" >
+                <comment>update date</comment>
+            </column>
+        </property>
+        
+        <set name="roles" table="titan_role_auth" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AUTH_ID" length="40" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.hp.titan.auth.model.Role">
+                <column name="ROLE_ID" length="40" not-null="true" />
+            </many-to-many>
+        </set>
+        <!--
+        <set name="resources" table="titan_AUTH_RESOURCE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AUTH_ID" length="40" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.hp.titan.auth.model.Resource">
+                <column name="RES_ID" length="40" not-null="true" />
+            </many-to-many>
+        </set>
+    	-->
+    </class>
+</hibernate-mapping>

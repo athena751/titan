@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="enumtype" extends="application-struts-default" namespace="/enumtype">
+	    <action name="typeList" class="com.hp.titan.enumtype.action.EnumtypeAction" method="doSearchEnumtype" >
+			<result name="success" type="freemarker">/pages/enumtype/typeList.ftl</result>
+		</action>
+		<action name="goValueList" class="com.hp.titan.enumtype.action.EnumtypeAction" method="goValueList" >
+			<result name="success" type="freemarker">/pages/enumtype/valueList.ftl</result>
+		</action>
+		
+		<action name="goTypeAdd" class="com.hp.titan.enumtype.action.EnumtypeAction" method="goTypeAdd" >
+			<result name="success" type="freemarker">/pages/enumtype/createType.ftl</result>
+		</action>
+		
+		<action name="doTypeSave" class="com.hp.titan.enumtype.action.EnumtypeAction" method="doTypeSave" >
+			<result name="success" type="redirect">typeList.do</result>
+		</action>
+		<action name="goTypeUpdate" class="com.hp.titan.enumtype.action.EnumtypeAction" method="goTypeUpdate" >
+			<result name="success" type="freemarker">/pages/enumtype/createType.ftl</result>
+		</action>
+		<action name="goValueAdd" class="com.hp.titan.enumtype.action.EnumtypeAction" method="goValueAdd" >
+			<result name="success" type="freemarker">/pages/enumtype/createValue.ftl</result>
+		</action>
+		
+		<action name="doValueSave" class="com.hp.titan.enumtype.action.EnumtypeAction" method="doValueSave" >
+			<result name="success" type="redirect">typeList.do</result>
+		</action>
+		<action name="goValueUpdate" class="com.hp.titan.enumtype.action.EnumtypeAction" method="goValueUpdate" >
+			<result name="success" type="freemarker">/pages/enumtype/createValue.ftl</result>
+		</action>
+		
+		
+		
+		
+		
+	</package>
+
+</struts>

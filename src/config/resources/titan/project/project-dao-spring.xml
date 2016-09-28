@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="projectDao"
+		class="com.hp.titan.project.dao.ProjectDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="projectModuleDao"
+		class="com.hp.titan.project.dao.ProjectModuleDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="dedicatedServerDao"
+		class="com.hp.titan.project.dao.DedicatedServerDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="parameterdataDao" class="com.hp.titan.test.dao.ParameterdataDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+</beans>

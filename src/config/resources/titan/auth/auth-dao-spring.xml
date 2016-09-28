@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+
+
+	<bean id="roleDao"
+		class="com.hp.titan.auth.dao.RoleDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="authDao"
+		class="com.hp.titan.auth.dao.AuthDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="roleAuthDao"
+		class="com.hp.titan.auth.dao.RoleAuthDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="groupDao"
+		class="com.hp.titan.auth.dao.GroupDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="groupUserDao"
+		class="com.hp.titan.auth.dao.GroupUserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userDao"
+		class="com.hp.titan.auth.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userRoleDao"
+		class="com.hp.titan.auth.dao.UserRoleDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="viewUserInfoDao"
+		class="com.hp.titan.auth.dao.ViewUserInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="menuDao"
+		class="com.hp.titan.auth.dao.MenuDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+<!-- 
+	
+
+	<bean id="viewUserInfoDao"
+		class="com.hp.titan.auth.dao.ViewUserInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	 -->
+</beans>

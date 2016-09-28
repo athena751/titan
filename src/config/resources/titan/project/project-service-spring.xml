@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+		
+	<bean id="projectService" class="com.hp.titan.project.service.impl.ProjectServiceImpl" >
+		<property name="projectDao" ref="projectDao" />
+		<property name="projectModuleDao" ref="projectModuleDao" />
+		<property name="dedicatedServerDao" ref="dedicatedServerDao" />
+		<property name="parameterdataDao" ref="parameterdataDao" />
+		<property name="rallyDao" ref="rallyDao" />
+	</bean>
+	
+</beans>
+

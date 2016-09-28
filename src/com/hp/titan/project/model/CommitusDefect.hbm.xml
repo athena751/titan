@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.project.model.CommitusDefect" table="COMMIT_US_DEFECT" >
+         <composite-id name="id" class="com.hp.titan.project.model.CommitusDefectId">
+            <key-property name="commitreportId" type="string">
+                <column name="COMMIT_REPORT_ID" length="50"/>
+            </key-property>
+            <key-property name="usdefectNum" type="string">
+                <column name="US_DEFECT_NUM" length="30" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

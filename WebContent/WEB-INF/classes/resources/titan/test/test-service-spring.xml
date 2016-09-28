@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+		
+	<bean id="testcaseService" class="com.hp.titan.test.service.impl.TestcaseServiceImpl" >
+		<property name="testcaseDao" ref="testcaseDao" />
+		<property name="caseLogDao" ref="caseLogDao" />
+		<property name="parameterDao" ref="parameterDao" />	
+		<property name="parameterdataDao" ref="parameterdataDao" />	  
+		<property name="runcaseserverDao" ref="runcaseserverDao" />
+		<property name="defectinfoDao" ref="defectinfoDao" />
+		<property name="rallyDao" ref="rallyDao" />
+		<property name="runCaseDao" ref="runCaseDao" />
+	</bean>
+	<bean id="testplanService" class="com.hp.titan.test.service.impl.TestplanServiceImpl" >
+		<property name="testplanDao" ref="testplanDao" />
+		<property name="testplancaseDao" ref="testplancaseDao" />
+	</bean>
+	<bean id="testjobService" class="com.hp.titan.test.service.impl.TestjobServiceImpl" >
+		<property name="testjobDao" ref="testjobDao" />
+		<property name="testjobcaseDao" ref="testjobcaseDao" />
+		<property name="testjobplanDao" ref="testjobplanDao" />
+		<property name="testjobserverDao" ref="testjobserverDao" />
+		<property name="runcaseserverDao" ref="runcaseserverDao" />
+		<property name="runcaseparameterDao" ref="runcaseparameterDao" />
+		<property name="runJobDao" ref="runJobDao" />
+		<property name="runCaseDao" ref="runCaseDao" />
+		<property name="parameterDao" ref="parameterDao" />
+		<property name="parameterdataDao" ref="parameterdataDao" />
+		<property name="defectinfoDao" ref="defectinfoDao" />
+	</bean>
+</beans>
+

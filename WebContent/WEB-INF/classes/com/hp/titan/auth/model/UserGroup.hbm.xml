@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-5-26 17:40:21 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.hp.titan.auth.model.UserGroup" table="titan_user_group" >
+    	<composite-id name="id" class="com.hp.titan.auth.model.UserGroupId">
+            <key-property name="groupId" type="int">
+                <column name="GROUP_ID" length="40" />
+            </key-property>
+            <key-property name="userId" type="int">
+                <column name="USER_ID" length="40" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="group" class="com.hp.titan.auth.model.Group" update="false" insert="false" fetch="select">
+            <column name="GROUP_ID" length="40" not-null="true">
+                <comment>组织ID</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.Winner" table="winner">
+  		<id name="winnerId" type="string">
+            <column name="WINNER_ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="userId" type="integer">
+            <column name="USER_ID" length="11" />
+        </property>
+        <property name="goodsName" type="string">
+            <column name="GOODS_NAME" length="50" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

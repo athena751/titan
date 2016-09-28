@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="sprint" extends="application-struts-default" namespace="/sprint">
+
+	
+	 	<action name="sprintList" class="com.hp.titan.sprint.action.SprintAction" method="doSearchSprints">
+				<result name="success" type="freemarker">/pages/sprint/sprintList.ftl</result>
+		</action>
+		
+		<action name="goSprintCreate" class="com.hp.titan.sprint.action.SprintAction" method="goSprintCreate">
+			<result name="success" type="freemarker">/pages/sprint/sprintEdit.ftl</result>
+		</action>
+		
+		<action name="doSprintSave" class="com.hp.titan.sprint.action.SprintAction" method="doSprintSave">
+				<result name="success" type="redirect">sprintList.do</result>
+		</action>
+		
+		<action name="goSprintUpdate" class="com.hp.titan.sprint.action.SprintAction" method="goSprintUpdate">
+			<result name="success" type="freemarker">/pages/sprint/sprintEdit.ftl</result>
+		</action>
+		<action name="goSprintView" class="com.hp.titan.sprint.action.SprintAction" method="goSprintView">
+			<result name="success" type="freemarker">/pages/sprint/sprintView.ftl</result>
+		</action>
+		<action name="getChartXml" class="com.hp.titan.sprint.action.SprintAction" method="getChartXml">
+		</action>
+		
+		<action name="doSprintRemove" class="com.hp.titan.sprint.action.SprintAction" method="doSprintRemove">
+				<result name="success" type="redirect">sprintList.do</result>
+		</action>
+		
+		<action name="checkSprintName" class="com.hp.titan.sprint.action.SprintAction" method="checkSprintName">
+		</action>
+		
+		<action name="checkSprintHasJob" class="com.hp.titan.sprint.action.SprintAction" method="checkSprintHasJob">
+		</action>
+		
+		<action name="doSynchronProject" class="com.hp.titan.sprint.action.SprintAction" method="doSynchronProject">
+		</action>
+		<action name="goSprintReport" class="com.hp.titan.sprint.action.SprintAction" method="goSprintReport">
+		    <result name="success" type="freemarker">/pages/sprint/sprintReport.ftl</result>
+		</action>
+		<action name="getSprintsByPorject" class="com.hp.titan.sprint.action.SprintAction" method="getSprintsByPorject">
+		</action>
+		
+		
+	</package>
+</struts>

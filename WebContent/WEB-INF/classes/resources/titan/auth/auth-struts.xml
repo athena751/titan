@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="auth" extends="application-struts-default" namespace="/auth">
+
+ 		<!-- 权限 -->
+ 		
+ 		
+ 		<action name="selectAuthInfo" class="com.hp.titan.auth.action.AuthAction" method="selectAuthInfo">
+		</action>
+		
+ 		<action name="goAuthList" >
+				<result type="freemarker">/pages/auth/jsTreeMenu.ftl</result>
+		</action>
+		
+  		<action name="authList" class="com.hp.titan.auth.action.AuthAction" method="doSearch">
+				<result name="success" type="freemarker">/pages/auth/authList.ftl</result>
+		</action>
+		
+		<action name="goAuthCreate" class="com.hp.titan.auth.action.AuthAction" method="goAuthCreate">
+			<result name="success" type="freemarker">/pages/auth/authEdit.ftl</result>
+		</action>
+		
+		<action name="goAuthUpdate" class="com.hp.titan.auth.action.AuthAction" method="goAuthUpdate">
+			<result name="success" type="freemarker">/pages/auth/authEdit.ftl</result>
+		</action>
+		
+		 <action name="doAuthSave" class="com.hp.titan.auth.action.AuthAction" method="doAuthSave">
+				<result name="success" type="redirect">authList.do?menuIdAry=${menuIdAry}</result>
+		</action>
+		
+	
+		
+		 <action name="doAuthRemove" class="com.hp.titan.auth.action.AuthAction" method="doAuthRemove">
+				<result name="success" type="redirect">authList.do?menuIdAry=${menuIdAry}</result>
+		</action>
+		
+		
+		
+		<!-- 角色 -->
+	    <action name="roleList" class="com.hp.titan.auth.action.RoleManagerAction" method="doSearch">
+				<result name="success" type="freemarker">/pages/role/roleList.ftl</result>
+		</action>
+		
+		<action name="goRoleCreate" class="com.hp.titan.auth.action.RoleManagerAction" method="goRoleCreate">
+			<result name="success" type="freemarker">/pages/role/roleEdit.ftl</result>
+		</action>
+		
+		 <action name="doRoleSave" class="com.hp.titan.auth.action.RoleManagerAction" method="doRoleSave">
+				<result name="success" type="redirect">roleList.do</result>
+		</action>
+		
+		<action name="goRoleUpdate" class="com.hp.titan.auth.action.RoleManagerAction" method="goRoleUpdate">
+			<result name="success" type="freemarker">/pages/role/roleEdit.ftl</result>
+		</action>
+		
+		
+		 <action name="doRoleRemove" class="com.hp.titan.auth.action.RoleManagerAction" method="doRoleRemove">
+				<result name="success" type="redirect">roleList.do</result>
+		</action>
+		
+		
+		<!-- 角色权限 -->
+		<action name="goRoleAuthMng" class="com.hp.titan.auth.action.RoleManagerAction" method="goRoleAuthMng">
+				<result name="success" type="freemarker">/pages/role/roleAuthMng.ftl</result>
+		</action>
+		
+		<action name="doSearchMenuAuth" class="com.hp.titan.auth.action.RoleManagerAction" method="doSearchMenuAuth">
+				<result name="success" type="freemarker">/pages/role/roleAuthMng.ftl</result>
+		</action>
+		
+		<action name="doSaveMenuRoleAuth" class="com.hp.titan.auth.action.RoleManagerAction" method="doSaveMenuRoleAuth">
+				<result name="success" type="freemarker">/pages/role/roleAuthMng.ftl</result>
+		</action>
+		
+		<action name="doDeleteRoleAuth" class="com.hp.titan.auth.action.RoleManagerAction" method="doDeleteRoleAuth">
+			<result name="success" type="redirect">goRoleAuthMng.do?roleIdAry=${roleId}</result>
+		</action>
+		
+		<!-- 角色用户 -->
+		<action name="goRoleUserMng" class="com.hp.titan.auth.action.RoleManagerAction" method="goRoleUserMng">
+				<result name="success" type="freemarker">/pages/role/roleUserMng.ftl</result>
+		</action>
+		
+		<action name="goSearchUsersList" class="com.hp.titan.auth.action.RoleManagerAction" method="goSearchUsersList">
+				<result name="success" type="freemarker">/pages/role/userList.ftl</result>
+		</action>
+		
+		<action name="doAddUserToRole" class="com.hp.titan.auth.action.RoleManagerAction" method="doAddUserToRole">
+			<result name="success" type="redirect">goRoleUserMng.do?roleIdAry=${roleId}</result>
+		</action>
+		
+		<action name="doDeleteRoleUser" class="com.hp.titan.auth.action.RoleManagerAction" method="doDeleteRoleUser">
+			<result name="success" type="redirect">goRoleUserMng.do?roleIdAry=${roleId}</result>
+		</action>
+		
+		
+	
+	  <!--组  -->
+	 	<action name="groupList" class="com.hp.titan.auth.action.GroupAction" method="doSearchGroups">
+				<result name="success" type="freemarker">/pages/group/groupList.ftl</result>
+		</action>
+		
+		<action name="goGroupCreate" class="com.hp.titan.auth.action.GroupAction" method="goGroupCreate">
+			<result name="success" type="freemarker">/pages/group/groupEdit.ftl</result>
+		</action>
+		
+		<action name="goGroupUpdate" class="com.hp.titan.auth.action.GroupAction" method="goGroupUpdate">
+			<result name="success" type="freemarker">/pages/group/groupEdit.ftl</result>
+		</action>
+		
+		 <action name="doGroupSave" class="com.hp.titan.auth.action.GroupAction" method="doGroupSave">
+				<result name="success" type="redirect">groupList.do</result>
+		</action>
+		
+		 <action name="doGroupRemove" class="com.hp.titan.auth.action.GroupAction" method="doGroupRemove">
+				<result name="success" type="redirect">groupList.do</result>
+		</action>
+	
+		<!-- 组用户 -->
+		<action name="goGroupUserMng" class="com.hp.titan.auth.action.GroupAction" method="goGroupUserMng">
+				<result name="success" type="freemarker">/pages/group/groupUserMng.ftl</result>
+		</action>
+		
+		<action name="goAllUsersList" class="com.hp.titan.auth.action.GroupAction" method="goAllUsersList">
+				<result name="success" type="freemarker">/pages/group/userList.ftl</result>
+		</action>
+		
+		<action name="doAddUserToGroup" class="com.hp.titan.auth.action.GroupAction" method="doAddUserToGroup">
+			<result name="success" type="redirect">goGroupUserMng.do?groupIdAry=${groupId}</result>
+		</action>
+		
+		<action name="doDeleteGroupUser" class="com.hp.titan.auth.action.GroupAction" method="doDeleteGroupUser">
+			<result name="success" type="redirect">goGroupUserMng.do?groupIdAry=${groupId}</result>
+		</action>
+		
+	
+		<!-- 用户 -->
+	  	<action name="userList" class="com.hp.titan.auth.action.UserAction" method="doSearchUsers">
+				<result name="success" type="freemarker">/pages/user/userList.ftl</result>
+		</action>
+		
+		<action name="goUserCreate" class="com.hp.titan.auth.action.UserAction" method="goUserCreate">
+			<result name="success" type="freemarker">/pages/user/userEdit.ftl</result>
+		</action>
+		
+		<action name="goUserDetail" class="com.hp.titan.auth.action.UserAction" method="goUserDetail">
+			<result name="success" type="freemarker">/pages/user/userDetail.ftl</result>
+			<result name="input" type="freemarker">/pages/user/userError.ftl</result>
+		</action>
+		
+		<action name="goUserDetailUpdate" class="com.hp.titan.auth.action.UserAction" method="goUserDetailUpdate">
+			<result name="success" type="freemarker">/pages/user/userDetailEdit.ftl</result>
+		</action>
+		
+		<action name="doUserDetailUpdate" class="com.hp.titan.auth.action.UserAction" method="doUserDetailUpdate">
+			<result name="success" type="freemarker">/pages/user/userDetail.ftl</result>
+		</action>
+		
+		<action name="goUserUpdate" class="com.hp.titan.auth.action.UserAction" method="goUserUpdate">
+			<result name="success" type="freemarker">/pages/user/userEdit.ftl</result>
+		</action>
+		
+		 <action name="doUserSave" class="com.hp.titan.auth.action.UserAction" method="doUserSave">
+				<result name="success" type="redirect">userList.do</result>
+		</action>
+		
+		 <action name="doUserRemove" class="com.hp.titan.auth.action.UserAction" method="doUserRemove">
+				<result name="success" type="redirect">userList.do</result>
+		</action>
+		
+		<action name="checkUserCode" class="com.hp.titan.auth.action.UserAction" method="checkUserCode">
+		</action>
+		
+		<action name="checkUserMail" class="com.hp.titan.auth.action.UserAction" method="checkUserMail">
+		</action>
+		
+		<!-- application -->
+		<action name="applicationList" class="com.hp.titan.auth.action.UserAction" method="applicationList">
+			<result name="success" type="freemarker">/pages/user/userApprovingList.ftl</result>
+		</action>
+		<action name="doUserApprove" class="com.hp.titan.auth.action.UserAction" method="applicationApprove">
+			<result name="success" type="redirect">applicationList.do</result>
+		</action>
+		<action name="doUserReject" class="com.hp.titan.auth.action.UserAction" method="applicationReject">
+			<result name="success" type="redirect">applicationList.do</result>
+		</action>
+		
+		<action name="goHistory" class="com.hp.titan.auth.action.UserAction" method="goHistory">
+			<result name="success" type="freemarker">/pages/help/history.html</result>
+		</action>
+	 
+</package>
+</struts>

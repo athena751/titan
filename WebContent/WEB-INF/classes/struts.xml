@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- development mode -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- development mode end -->
+	<!-- product mode
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	 -->
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="struts.action.extension" value="do,ftl" />
+	<!-- 改变struts2默认为2M的上传文件大小限制 ,以字节为单位 -->  
+    <constant name="struts.multipart.maxSize" value="1024000000"/>
+    <constant name="struts.multipart.saveDir" value="/tmp"></constant>
+    
+	<package extends="struts-default" name="application-struts-default">      
+		<interceptors>
+		 	<interceptor name="authority"  
+                class="com.hp.titan.login.LoginInterceptor">  
+            </interceptor>  
+			<interceptor-stack name="applicationStack">
+				<interceptor-ref name="defaultStack" />
+			    <interceptor-ref name="authority" />  
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="applicationStack" />
+		<global-results>
+            <result name="login">/index.jsp</result>
+        	<result name="none">/system/session.jsp</result>    
+			<result name="error">/system/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+	</package>
+	
+	<include file="application-struts.xml" />
+
+	<package extends="application-struts-default" name="ftl">
+		<action name="*">
+			<result type="freemarker">{1}.ftl</result>
+			<result>{1}.jsp</result>
+		</action>
+	</package>
+	
+</struts>

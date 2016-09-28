@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2013 1:05:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hp.titan.mytitan.model.Goods" table="Goods">
+  		<id name="goodsId" type="integer">
+            <column name="GOODS_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="goodsName" type="string">
+            <column name="GOODS_NAME" length="50" />
+        </property>
+        <property name="price" type="integer">
+            <column name="PRICE" length="11" />
+        </property>
+         <property name="describe" type="string">
+            <column name="DESCRIBE" length="300" />
+        </property>
+        <property name="img" type="string">
+            <column name="IMG" length="50" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="START_DATE" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="END_DATE" length="19" />
+        </property>
+         <property name="isValid" type="integer">
+            <column name="IS_VALID" length="11"/>
+        </property>
+        <property name="type" type="integer">
+            <column name="TYPE" length="11"/>
+        </property>
+        <property name="max" type="integer">
+            <column name="MAX" length="11"/>
+        </property>
+        <property name="min" type="integer">
+            <column name="MIN" length="11"/>
+        </property>
+        <property name="sort" type="integer">
+            <column name="SORT" length="11"/>
+        </property>
+    </class>
+</hibernate-mapping>
